@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewMenu">
+    tools:context=".ViewMenuActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -106,6 +106,12 @@
                 android:layout_weight="1"
                 android:text="加入購物車" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_checkcart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="查看購物車" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
