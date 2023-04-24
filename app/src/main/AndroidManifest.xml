@@ -16,6 +16,9 @@
             android:name=".RestaurantList"
             android:exported="false" />
         <activity
+            android:name=".ViewMenu"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
