@@ -46,7 +46,7 @@ public class SignInActivity extends AppCompatActivity {
           String sharedPassword = sharedPreferences.getString("password", "");
           if(username.equals(sharedUserName) && password.equals(sharedPassword)) {
             sharedPreferences.edit().putBoolean("signed_in", true).commit();
-            Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+            Intent intent = new Intent(SignInActivity.this, MainPage.class);
             startActivity(intent);
           } else {
             Toast.makeText(SignInActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
