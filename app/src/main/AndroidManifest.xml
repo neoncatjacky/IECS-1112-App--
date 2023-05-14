@@ -13,6 +13,9 @@
         android:theme="@style/Theme.BreakfastApp"
         tools:targetApi="31">
         <activity
+            android:name=".Checkout"
+            android:exported="false" />
+        <activity
             android:name=".ViewMenu"
             android:exported="false" />
         <activity

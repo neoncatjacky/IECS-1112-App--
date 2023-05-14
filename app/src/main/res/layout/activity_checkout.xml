@@ -4,47 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#3F51B5"
-    android:foregroundTint="#673AB7"
-    tools:context=".Figma01">
+    tools:context=".Checkout">
 
     <TextView
-        android:id="@+id/tv_restaurant_name"
+        android:id="@+id/tv_checkout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:text="FCU餐廳"
-        android:textColor="#0E0D0D"
-        android:textSize="40sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="16dp"
+        android:text="結賬付款"
+        android:textColor="#050505"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/iv_main_logo"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+    <TextView
+        android:id="@+id/tv_cash_only"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="136dp"
         android:layout_marginEnd="16dp"
+        android:text="只接受現金付款，請到櫃台付款謝謝"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_restaurant_name"
-        app:srcCompat="@drawable/order" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_checkout" />
 
     <Button
-        android:id="@+id/btn_start"
+        android:id="@+id/btn_finish_order"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="56dp"
-        android:text="Start"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="264dp"
+        android:layout_marginEnd="26dp"
+        android:text="完成訂單"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_main_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_cash_only" />
 </androidx.constraintlayout.widget.ConstraintLayout>
