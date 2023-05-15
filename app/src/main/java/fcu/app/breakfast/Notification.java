@@ -26,7 +26,7 @@ public class Notification extends AppCompatActivity {
 
     btnReturnHome.setOnClickListener(new View.OnClickListener() {
       public void onClick(View v) {
-        Intent intent = new Intent(v.getContext(), MainPage.class);
+        Intent intent = new Intent(v.getContext(), MainActivity.class);
         startActivityForResult(intent, 0);
       }
     });

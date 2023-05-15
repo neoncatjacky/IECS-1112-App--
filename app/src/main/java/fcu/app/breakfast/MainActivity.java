@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainPage extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private TextView tvRestaurantName;
     private ImageView ivRestaurantLogo;
