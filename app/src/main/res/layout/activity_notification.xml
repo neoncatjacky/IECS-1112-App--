@@ -33,12 +33,14 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_notice1" />
 
     <Button
-        android:id="@+id/btn_return_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="348dp"
-        android:text="回到主頁面"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_notice2" />
+      android:id="@+id/btn_return_home"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="26dp"
+      android:layout_marginTop="348dp"
+      android:layout_marginEnd="26dp"
+      android:text="回到主頁面"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tv_notice2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
