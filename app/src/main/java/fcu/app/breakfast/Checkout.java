@@ -18,13 +18,13 @@ public class Checkout extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_checkout);
 
-        btnFinishOrder = findViewById(R.id.btn_start_order);
+        btnFinishOrder = findViewById(R.id.btn_finish_order);
 
         btnFinishOrder.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ViewMenu.class);
+                Intent intent = new Intent(v.getContext(), Notification.class);
                 startActivityForResult(intent,0);
             }
         });
