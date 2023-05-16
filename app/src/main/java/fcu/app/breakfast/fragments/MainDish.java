@@ -26,7 +26,7 @@ public class MainDish extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
 
         view = inflater.inflate(R.layout.fragment_main_dish, container, false);
-        Button addBul = (Button) view.findViewById(R.id.button);
+        Button addBul = (Button) view.findViewById(R.id.button1);
         addBul.setOnClickListener(this);
         return view;
     }
