@@ -18,22 +18,30 @@ public class ProductDetailsActivity extends Activity {
     setContentView(R.layout.product_details);
 
     List<Product> catalog = ShoppingCartHelper.getMainCatalog(getResources());
+    int productIndex = getIntent().getExtras().getInt(ShoppingCartHelper.PRODUCT_INDEX1);
     final List<Product> cart = ShoppingCartHelper.getCart();
     int fragId = getIntent().getExtras().getInt("fragId");
+    Product temp = catalog.get(productIndex);
     if(fragId == 1)
     {
       catalog = ShoppingCartHelper.getMainCatalog(getResources());
+      productIndex = getIntent().getExtras().getInt(ShoppingCartHelper.PRODUCT_INDEX1);
+      temp = catalog.get(productIndex);
     }
     else if(fragId == 2)
     {
       catalog = ShoppingCartHelper.getDrinkCatalog(getResources());
+      productIndex = getIntent().getExtras().getInt(ShoppingCartHelper.PRODUCT_INDEX2);
+      temp = catalog.get(productIndex);
     }
     else if(fragId == 3)
     {
       catalog = ShoppingCartHelper.getDessertCatalog(getResources());
+      productIndex = getIntent().getExtras().getInt(ShoppingCartHelper.PRODUCT_INDEX3);
+      temp = catalog.get(productIndex);
     }
-    int productIndex = getIntent().getExtras().getInt(ShoppingCartHelper.PRODUCT_INDEX);
-    final Product selectedProduct = catalog.get(productIndex);
+
+    final Product selectedProduct = temp;
 
 
     // Set the proper image and text
