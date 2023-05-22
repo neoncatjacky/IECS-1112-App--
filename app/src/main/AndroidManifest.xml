@@ -41,6 +41,14 @@
         <activity
           android:name=".SignUpActivity"
           android:exported="false" />
+        <activity
+            android:name=".ProductDetailsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ShoppingCartActivity"
+            android:exported="false" />
+
 
 
 
