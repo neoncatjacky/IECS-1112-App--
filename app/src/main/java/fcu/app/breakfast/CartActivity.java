@@ -27,6 +27,6 @@ public class CartActivity extends AppCompatActivity {
           startActivityForResult(intent,0);
         }
     });
-    //btnCheckout.setOnClickListener(listener);
+
   }
 }
