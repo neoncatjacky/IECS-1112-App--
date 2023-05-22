@@ -49,7 +49,8 @@ public class DrinkFragment extends Fragment implements View.OnClickListener {
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
                 Intent productDetailsIntent = new Intent(getActivity().getBaseContext(), ProductDetailsActivity.class);
-                productDetailsIntent.putExtra(ShoppingCartHelper.PRODUCT_INDEX, position);
+                productDetailsIntent.putExtra(ShoppingCartHelper.PRODUCT_INDEX2, position);
+                productDetailsIntent.putExtra("fragId", 2);
                 startActivity(productDetailsIntent);
             }
         });
