@@ -41,7 +41,7 @@ public class DrinkFragment extends Fragment implements View.OnClickListener {
         mProductList = ShoppingCartHelper.getDrinkCatalog(getResources());
 
         ListView drinkListViewCatalog = view.findViewById(R.id.ListViewDrinkCatalog);
-        drinkListViewCatalog.setAdapter(new ProductAdapter(mProductList, getLayoutInflater(), false));
+        drinkListViewCatalog.setAdapter(new ProductAdapter(mProductList, getLayoutInflater(), false,false));
 
         drinkListViewCatalog.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 

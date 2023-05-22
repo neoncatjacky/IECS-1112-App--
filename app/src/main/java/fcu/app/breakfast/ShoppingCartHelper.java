@@ -1,6 +1,8 @@
 package fcu.app.breakfast;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Vector;
 
 import android.content.res.Resources;
@@ -15,7 +17,8 @@ public class ShoppingCartHelper {
   private static List<Product> maincatalog;
   private static List<Product> drinkcatalog;
   private static List<Product> dessertcatalog;
-  private static List<Product> cart;
+
+  private static Map<Product, ShoppingCartEntry> cartMap = new HashMap<Product, ShoppingCartEntry>();
 
   public static List<Product> getMainCatalog(Resources res){
     if(maincatalog == null) {
@@ -59,12 +62,50 @@ public class ShoppingCartHelper {
     return dessertcatalog;
   }
 
-  public static List<Product> getCart() {
-    if(cart == null) {
-      cart = new Vector<Product>();
+  public static void setQuantity(Product product, int quantity) {
+    // Get the current cart entry
+    ShoppingCartEntry curEntry = cartMap.get(product);
+
+    // If the quantity is zero or less, remove the products
+    if(quantity <= 0) {
+      if(curEntry != null)
+        removeProduct(product);
+      return;
     }
 
-    return cart;
+    // If a current cart entry doesn't exist, create one
+    if(curEntry == null) {
+      curEntry = new ShoppingCartEntry(product, quantity);
+      cartMap.put(product, curEntry);
+      return;
+    }
+
+    // Update the quantity
+    curEntry.setQuantity(quantity);
   }
+
+  public static int getProductQuantity(Product product) {
+    // Get the current cart entry
+    ShoppingCartEntry curEntry = cartMap.get(product);
+
+    if(curEntry != null)
+      return curEntry.getQuantity();
+
+    return 0;
+  }
+
+  public static void removeProduct(Product product) {
+    cartMap.remove(product);
+  }
+
+  public static List<Product> getCartList() {
+    List<Product> cartList = new Vector<Product>(cartMap.keySet().size());
+    for(Product p : cartMap.keySet()) {
+      cartList.add(p);
+    }
+    return cartList;
+  }
+
+
 
 }

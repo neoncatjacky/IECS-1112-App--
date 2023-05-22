@@ -42,7 +42,7 @@ public class DessertFragment extends Fragment implements View.OnClickListener {
 
 
         ListView dessertListViewCatalog = view.findViewById(R.id.ListViewDessertCatalog);
-        dessertListViewCatalog.setAdapter(new ProductAdapter(mProductList, getLayoutInflater(), false));
+        dessertListViewCatalog.setAdapter(new ProductAdapter(mProductList, getLayoutInflater(), false,false));
 
         dessertListViewCatalog.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 

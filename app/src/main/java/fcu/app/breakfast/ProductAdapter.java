@@ -15,11 +15,13 @@ public class ProductAdapter extends BaseAdapter {
   private List<Product> mProductList;
   private LayoutInflater mInflater;
   private boolean mShowCheckbox;
+  private boolean mShowQuantity;
 
-  public ProductAdapter(List<Product> list, LayoutInflater inflater, boolean showCheckbox) {
+  public ProductAdapter(List<Product> list, LayoutInflater inflater, boolean showCheckbox, boolean showQuantity) {
     mProductList = list;
     mInflater = inflater;
     mShowCheckbox = showCheckbox;
+    mShowQuantity = showQuantity;
   }
 
   @Override
@@ -53,6 +55,8 @@ public class ProductAdapter extends BaseAdapter {
 
       item.productCheckbox = (CheckBox) convertView.findViewById(R.id.CheckBoxSelected);
 
+      item.productQuantity = (TextView) convertView.findViewById(R.id.textViewQuantity);
+
       convertView.setTag(item);
     } else {
       item = (ViewItem) convertView.getTag();
@@ -72,6 +76,15 @@ public class ProductAdapter extends BaseAdapter {
         item.productCheckbox.setChecked(false);
     }
 
+    // Show the quantity in the cart or not
+    if (mShowQuantity) {
+      item.productQuantity.setText("Quantity: "
+        + ShoppingCartHelper.getProductQuantity(curProduct));
+    } else {
+      // Hid the view
+      item.productQuantity.setVisibility(View.GONE);
+    }
+
 
     return convertView;
   }
@@ -81,6 +94,7 @@ public class ProductAdapter extends BaseAdapter {
     ImageView productImageView;
     TextView productTitle;
     CheckBox productCheckbox;
+    TextView productQuantity;
   }
 
 }

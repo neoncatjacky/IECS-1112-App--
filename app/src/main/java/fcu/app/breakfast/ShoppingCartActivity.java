@@ -20,7 +20,7 @@ public class ShoppingCartActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.cart_activity);
 
-    mCartList = ShoppingCartHelper.getCart();
+    mCartList = ShoppingCartHelper.getCartList();
 
     // Make sure to clear the selections
     for(int i=0; i<mCartList.size(); i++) {
@@ -29,7 +29,7 @@ public class ShoppingCartActivity extends Activity {
 
     // Create the list
     final ListView listViewCatalog = (ListView) findViewById(R.id.lv_catalog);
-    mProductAdapter = new ProductAdapter(mCartList, getLayoutInflater(), true);
+    mProductAdapter = new ProductAdapter(mCartList, getLayoutInflater(), true,true);
     listViewCatalog.setAdapter(mProductAdapter);
 
     listViewCatalog.setOnItemClickListener(new OnItemClickListener() {
