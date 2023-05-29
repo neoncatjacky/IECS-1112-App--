@@ -47,6 +47,15 @@
             android:text="購物車內數量:"
             android:textColor="#000000"
             android:textSize="20dip"></TextView>
+
+        <TextView android:layout_height="wrap_content"
+            android:id="@+id/TextViewProductPrice"
+            android:layout_width="fill_parent"
+            android:layout_margin="5dip"
+            android:textColor="#000000"
+            android:text="價格:"
+            android:textSize="20dip">
+        </TextView>
     </LinearLayout>
 
 

@@ -53,6 +53,8 @@ public class ProductDetailsActivity extends Activity {
     productTitleTextView.setText(selectedProduct.title);
     TextView productDetailsTextView = (TextView) findViewById(R.id.TextViewProductDetails);
     productDetailsTextView.setText(selectedProduct.description);
+    TextView productPriceTextView = (TextView) findViewById(R.id.TextViewProductPrice);
+    productPriceTextView.setText("$" + selectedProduct.price);
 
     // Update the current quantity in the cart
     TextView textViewCurrentQuantity = (TextView) findViewById(R.id.textViewCurrentlyInCart);

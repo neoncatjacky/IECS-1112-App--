@@ -75,7 +75,7 @@ public class ShoppingCartHelper {
 
     // If a current cart entry doesn't exist, create one
     if(curEntry == null) {
-      curEntry = new ShoppingCartEntry(product, quantity);
+      curEntry = new ShoppingCartEntry(product, quantity,0);
       cartMap.put(product, curEntry);
       return;
     }
@@ -90,6 +90,16 @@ public class ShoppingCartHelper {
 
     if(curEntry != null)
       return curEntry.getQuantity();
+
+    return 0;
+  }
+
+  public static int getProductPrice(Product product) {
+    // Get the current cart entry
+    ShoppingCartEntry curEntry = cartMap.get(product);
+
+    if(curEntry != null)
+      return curEntry.getPrice() * curEntry.getQuantity() ;
 
     return 0;
   }

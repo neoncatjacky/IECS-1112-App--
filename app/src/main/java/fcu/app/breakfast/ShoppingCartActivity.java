@@ -10,11 +10,13 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.TextView;
 
 public class ShoppingCartActivity extends Activity {
 
   private List<Product> mCartList;
   private ProductAdapter mProductAdapter;
+  private Button checkout;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class ShoppingCartActivity extends Activity {
     setContentView(R.layout.cart_activity);
 
     mCartList = ShoppingCartHelper.getCartList();
+    checkout = findViewById(R.id.btn_checkout);
 
     // Make sure to clear the selections
     for(int i=0; i<mCartList.size(); i++) {
@@ -30,7 +33,7 @@ public class ShoppingCartActivity extends Activity {
 
     // Create the list
     final ListView listViewCatalog = (ListView) findViewById(R.id.lv_catalog);
-    mProductAdapter = new ProductAdapter(mCartList, getLayoutInflater(), true,true);
+    mProductAdapter = new ProductAdapter(mCartList, getLayoutInflater(), true,true,true);
     listViewCatalog.setAdapter(mProductAdapter);
 
     listViewCatalog.setOnItemClickListener(new OnItemClickListener() {
@@ -99,36 +102,15 @@ public class ShoppingCartActivity extends Activity {
         }
         startActivity(productDetailsIntent);
 
-
-//        Intent productDetailsIntent = new Intent(getBaseContext(),ProductDetailsActivity.class);
-//        productDetailsIntent.putExtra(ShoppingCartHelper.PRODUCT_INDEX1, position);
-//        int fragId = getIntent().getExtras().getInt("fragId");
-//        if(fragId == 1)
-//        {
-//          productDetailsIntent.putExtra(ShoppingCartHelper.PRODUCT_INDEX1, position);
-//        }
-//        else if(fragId == 2)
-//        {
-//          productDetailsIntent.putExtra(ShoppingCartHelper.PRODUCT_INDEX2, position);
-//        }
-//        else if(fragId == 3)
-//        {
-//          productDetailsIntent.putExtra(ShoppingCartHelper.PRODUCT_INDEX3, position);
-//        }
-//
-//        startActivity(productDetailsIntent);
-//        Product selectedProduct = mCartList.get(position);
-//
-//        if(selectedProduct.selected == true)
-//          selectedProduct.selected = false;
-//        else
-//          selectedProduct.selected = true;
-//
-//        mProductAdapter.notifyDataSetInvalidated();
-
       }
     });
 
+    checkout.setOnClickListener(new OnClickListener() {
+      public void onClick(View v) {
+        Intent intent = new Intent(v.getContext(), Checkout.class);
+        startActivityForResult(intent,0);
+      }
+    });
     //Button removeButton = (Button) findViewById(R.id.btn_remove);
 //    removeButton.setOnClickListener(new OnClickListener() {
 //      @Override
@@ -154,6 +136,15 @@ public class ShoppingCartActivity extends Activity {
     if(mProductAdapter != null) {
       mProductAdapter.notifyDataSetChanged();
     }
+
+    int subTotal = 0;
+    for(Product p : mCartList) {
+      int quantity = ShoppingCartHelper.getProductQuantity(p);
+      subTotal += p.price * quantity;
+    }
+
+    TextView productPriceTextView = (TextView) findViewById(R.id.TextViewSubtotal);
+    productPriceTextView.setText("Subtotal: $" + subTotal);
   }
 
 }

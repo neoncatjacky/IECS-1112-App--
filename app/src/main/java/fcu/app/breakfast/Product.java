@@ -7,12 +7,12 @@ public class Product {
   public String title;
   public Drawable productImage;
   public String description;
-  public double price;
+  public int price;
   public boolean selected;
   public int meal_id;
 
   public Product(String title, Drawable productImage, String description,
-                 double price, int meal_id) {
+                 int price, int meal_id) {
     this.title = title;
     this.productImage = productImage;
     this.description = description;
@@ -22,5 +22,9 @@ public class Product {
 
   public int getMeal_id() {
     return meal_id;
+  }
+
+  public int getPrice() {
+    return price;
   }
 }

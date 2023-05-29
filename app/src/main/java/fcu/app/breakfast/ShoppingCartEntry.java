@@ -4,10 +4,12 @@ public class ShoppingCartEntry {
 
   private Product mProduct;
   private int mQuantity;
+  private int mPrice;
 
-  public ShoppingCartEntry(Product product, int quantity) {
+  public ShoppingCartEntry(Product product, int quantity, int price) {
     mProduct = product;
     mQuantity = quantity;
+    mPrice = mProduct.getPrice();
   }
 
   public Product getProduct() {
@@ -22,4 +24,11 @@ public class ShoppingCartEntry {
     mQuantity = quantity;
   }
 
+  public int getPrice() {
+    return mPrice;
+  }
+
+  public void setPrice(int mPrice) {
+    this.mPrice = mPrice;
+  }
 }

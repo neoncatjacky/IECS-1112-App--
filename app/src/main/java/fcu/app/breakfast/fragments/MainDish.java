@@ -43,7 +43,7 @@ public class MainDish extends Fragment implements View.OnClickListener {
 
 
         ListView mainListViewCatalog = view.findViewById(R.id.ListViewMainDishCatalog);
-        mainListViewCatalog.setAdapter(new ProductAdapter(mProductList, getLayoutInflater(), false,false));
+        mainListViewCatalog.setAdapter(new ProductAdapter(mProductList, getLayoutInflater(), false,false,false));
 
         mainListViewCatalog.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
