@@ -81,7 +81,7 @@ public class ProductAdapter extends BaseAdapter {
 
     // Show the quantity in the cart or not
     if (mShowQuantity) {
-      item.productQuantity.setText("Quantity: "
+      item.productQuantity.setText("數量: "
         + ShoppingCartHelper.getProductQuantity(curProduct));
     } else {
       // Hid the view
@@ -89,7 +89,7 @@ public class ProductAdapter extends BaseAdapter {
     }
 
     if (mShowPrice) {
-      item.productPrice.setText("Price: "
+      item.productPrice.setText("價格: "
         + ShoppingCartHelper.getProductPrice(curProduct));
     } else {
       // Hid the view

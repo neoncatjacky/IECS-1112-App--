@@ -144,7 +144,7 @@ public class ShoppingCartActivity extends Activity {
     }
 
     TextView productPriceTextView = (TextView) findViewById(R.id.TextViewSubtotal);
-    productPriceTextView.setText("Subtotal: $" + subTotal);
+    productPriceTextView.setText("總金額: $" + subTotal);
   }
 
 }

@@ -46,12 +46,13 @@
 
         <TextView
             android:id="@+id/TextViewSubtotal"
-            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dip"
+            android:layout_weight="1"
             android:text="總金額 : "
-            android:textColor="#000000"
+            android:textColor="#FF0000"
+            android:textSize="20dp"
             android:textStyle="bold"></TextView>
 
         <Button

@@ -34,7 +34,9 @@
         android:layout_margin="5dip"
         android:layout_weight="1"
         android:text="商品敘述"
-        android:textColor="#000000"></TextView>
+        android:textColor="#000000"
+        android:textSize="20dip">
+    </TextView>
 
     <LinearLayout android:layout_height="wrap_content"
         android:layout_width="fill_parent" android:id="@+id/linearLayoutCurrentlyInCart">

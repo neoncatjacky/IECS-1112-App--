@@ -58,8 +58,8 @@ public class ProductDetailsActivity extends Activity {
 
     // Update the current quantity in the cart
     TextView textViewCurrentQuantity = (TextView) findViewById(R.id.textViewCurrentlyInCart);
-    textViewCurrentQuantity.setText("Currently in Cart: "
-      + ShoppingCartHelper.getProductQuantity(selectedProduct));
+    textViewCurrentQuantity.setText("購物車內目前有: "
+      + ShoppingCartHelper.getProductQuantity(selectedProduct) + "個");
 
     // Save a reference to the quantity edit text
     final EditText editTextQuantity = (EditText) findViewById(R.id.editTextQuantity);
