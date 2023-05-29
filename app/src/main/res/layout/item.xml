@@ -23,14 +23,14 @@
             android:textColor="#000000"
             android:textSize="26dip"></TextView>
 
-        <CheckBox
-            android:id="@+id/CheckBoxSelected"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dip"
-            android:clickable="false"
-            android:focusable="false"></CheckBox>
+<!--        <CheckBox-->
+<!--            android:id="@+id/CheckBoxSelected"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_margin="5dip"-->
+<!--            android:clickable="false"-->
+<!--            android:focusable="false"></CheckBox>-->
 
         <TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_weight="1"></TextView>

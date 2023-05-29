@@ -24,11 +24,11 @@ public class ShoppingCartHelper {
     if(maincatalog == null) {
       maincatalog = new Vector<Product>();
       maincatalog.add(new Product("主食一號", res.getDrawable(R.drawable.p1),
-        "主食一號，一百塊", 100));
+        "主食一號，一百塊", 100,1));
       maincatalog.add(new Product("主食二號", res.getDrawable(R.drawable.p2),
-        "主食二號，兩百塊", 200));
+        "主食二號，兩百塊", 200,2));
       maincatalog.add(new Product("主食三號", res.getDrawable(R.drawable.p3),
-        "主食三號，三百塊", 300));
+        "主食三號，三百塊", 300,3));
     }
 
     return maincatalog;
@@ -38,11 +38,11 @@ public class ShoppingCartHelper {
     if(drinkcatalog == null) {
       drinkcatalog = new Vector<Product>();
       drinkcatalog.add(new Product("飲料一號", res.getDrawable(R.drawable.p4),
-        "飲料一號，十塊", 10));
+        "飲料一號，十塊", 10,4));
       drinkcatalog.add(new Product("飲料二號", res.getDrawable(R.drawable.p5),
-        "飲料二號，二十塊", 20));
+        "飲料二號，二十塊", 20,5));
       drinkcatalog.add(new Product("飲料三號", res.getDrawable(R.drawable.p6),
-        "飲料三號，三十塊", 30));
+        "飲料三號，三十塊", 30,6));
     }
 
     return drinkcatalog;
@@ -52,11 +52,11 @@ public class ShoppingCartHelper {
     if(dessertcatalog == null) {
       dessertcatalog = new Vector<Product>();
       dessertcatalog.add(new Product("甜點一號", res.getDrawable(R.drawable.p7),
-        "甜點一號，一百塊", 100));
+        "甜點一號，一百塊", 100,7));
       dessertcatalog.add(new Product("甜點二號", res.getDrawable(R.drawable.p8),
-        "甜點二號，兩百塊", 200));
+        "甜點二號，兩百塊", 200,8));
       dessertcatalog.add(new Product("甜點三號", res.getDrawable(R.drawable.p9),
-        "甜點三號，三百塊", 300));
+        "甜點三號，三百塊", 300,9));
     }
 
     return dessertcatalog;
