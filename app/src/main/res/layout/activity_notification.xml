@@ -19,6 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ListView
         android:id="@+id/lv_final_catalog"
         android:layout_width="match_parent"
@@ -32,10 +33,10 @@
         android:groupIndicator="@null"
         app:layout_constraintBottom_toTopOf="@+id/tv_final_price"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_notice2"
         app:layout_constraintVertical_bias="1.0"></ListView>
-
 
     <TextView
         android:id="@+id/tv_final_price"
@@ -59,7 +60,7 @@
         android:layout_marginStart="26dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="26dp"
-        android:text="餐點項目："
+        android:text="請於15分鐘後前來取餐謝謝"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
