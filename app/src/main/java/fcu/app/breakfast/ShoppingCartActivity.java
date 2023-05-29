@@ -23,6 +23,11 @@ public class ShoppingCartActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.cart_activity);
 
+    if(mProductAdapter != null) {
+      mProductAdapter.notifyDataSetChanged();
+    }
+
+
     mCartList = ShoppingCartHelper.getCartList();
     checkout = findViewById(R.id.btn_checkout);
 
@@ -118,6 +123,7 @@ public class ShoppingCartActivity extends Activity {
         startActivityForResult(intent,0);
       }
     });
+
     //Button removeButton = (Button) findViewById(R.id.btn_remove);
 //    removeButton.setOnClickListener(new OnClickListener() {
 //      @Override

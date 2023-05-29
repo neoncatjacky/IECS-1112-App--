@@ -28,6 +28,16 @@
 
 
     <TextView
+        android:id="@+id/TextViewProductPrice"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:text="價格:"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20dip"></TextView>
+
+    <TextView
         android:id="@+id/TextViewProductDetails"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -50,14 +60,6 @@
             android:textColor="#000000"
             android:textSize="20dip"></TextView>
 
-        <TextView android:layout_height="wrap_content"
-            android:id="@+id/TextViewProductPrice"
-            android:layout_width="fill_parent"
-            android:layout_margin="5dip"
-            android:textColor="#000000"
-            android:text="價格:"
-            android:textSize="20dip">
-        </TextView>
     </LinearLayout>
 
 
@@ -83,4 +85,5 @@
             android:layout_gravity="right"
             android:text="設置數量"></Button>
     </LinearLayout>
+
 </LinearLayout>

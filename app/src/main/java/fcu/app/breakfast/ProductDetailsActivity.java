@@ -13,12 +13,19 @@ import android.widget.Toast;
 
 public class ProductDetailsActivity extends Activity {
 
+  private List<Product> mCartList;
+  private ProductAdapter mProductAdapter;
+
+
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
 
     super.onCreate(savedInstanceState);
     setContentView(R.layout.product_details);
 
+    mCartList = ShoppingCartHelper.getCartList();
+    mProductAdapter = new ProductAdapter(mCartList, getLayoutInflater(), true,true,true);
     List<Product> catalog = ShoppingCartHelper.getMainCatalog(getResources());
     int productIndex = getIntent().getExtras().getInt(ShoppingCartHelper.PRODUCT_INDEX1);
     final List<Product> cart = ShoppingCartHelper.getCartList();
@@ -44,8 +51,6 @@ public class ProductDetailsActivity extends Activity {
     }
 
     final Product selectedProduct = temp;
-
-
     // Set the proper image and text
     ImageView productImageView = (ImageView) findViewById(R.id.ImageViewProduct);
     productImageView.setImageDrawable(selectedProduct.productImage);
@@ -54,7 +59,7 @@ public class ProductDetailsActivity extends Activity {
     TextView productDetailsTextView = (TextView) findViewById(R.id.TextViewProductDetails);
     productDetailsTextView.setText(selectedProduct.description);
     TextView productPriceTextView = (TextView) findViewById(R.id.TextViewProductPrice);
-    productPriceTextView.setText("$" + selectedProduct.price);
+    productPriceTextView.setText("價格: " + selectedProduct.price);
 
     // Update the current quantity in the cart
     TextView textViewCurrentQuantity = (TextView) findViewById(R.id.textViewCurrentlyInCart);
@@ -94,6 +99,16 @@ public class ProductDetailsActivity extends Activity {
         // If we make it here, a valid quantity was entered
         ShoppingCartHelper.setQuantity(selectedProduct, quantity);
 
+        if(quantity == 0)
+        {
+          for(int i = mCartList.size()-1; i>=0; i--) {
+
+          if(mCartList.get(i).getMeal_id() == selectedProduct.getMeal_id()) {
+            mCartList.remove(i);
+          }
+        }
+        mProductAdapter.notifyDataSetChanged();
+        }
         // Close the activity
         finish();
       }
