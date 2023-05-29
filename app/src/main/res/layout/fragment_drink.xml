@@ -13,7 +13,10 @@
         android:clickable="true"></ListView>
 
     <Button android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:layout_margin="5dip"
-        android:layout_gravity="right" android:id="@+id/ButtonViewCart"
-        android:text="View Shopping Cart"></Button>
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:layout_gravity="right"
+        android:id="@+id/ButtonViewCart"
+        android:text="檢視購物車">
+    </Button>
 </LinearLayout>
