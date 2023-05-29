@@ -32,7 +32,7 @@ public class ShoppingCartActivity extends Activity {
     }
 
     // Create the list
-    final ListView listViewCatalog = (ListView) findViewById(R.id.lv_catalog);
+    final ListView listViewCatalog = (ListView) findViewById(R.id.lv_final_catalog);
     mProductAdapter = new ProductAdapter(mCartList, getLayoutInflater(), true,true,true);
     listViewCatalog.setAdapter(mProductAdapter);
 
@@ -107,7 +107,14 @@ public class ShoppingCartActivity extends Activity {
 
     checkout.setOnClickListener(new OnClickListener() {
       public void onClick(View v) {
+
+        int subTotal = 0;
+        for(Product p : mCartList) {
+          int quantity = ShoppingCartHelper.getProductQuantity(p);
+          subTotal += p.price * quantity;
+        }
         Intent intent = new Intent(v.getContext(), Checkout.class);
+        intent.putExtra("finaltotalprice", subTotal);
         startActivityForResult(intent,0);
       }
     });

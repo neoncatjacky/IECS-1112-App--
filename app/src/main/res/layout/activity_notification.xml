@@ -10,37 +10,73 @@
         android:id="@+id/tv_notice1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="52dp"
         android:text="您的餐點明細如下："
         android:textColor="#0C0C0C"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/lv_final_catalog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+        android:layout_weight="100"
+        android:childIndicator="@null"
+        android:groupIndicator="@null"
+        app:layout_constraintBottom_toTopOf="@+id/tv_final_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_notice2"
+        app:layout_constraintVertical_bias="1.0"></ListView>
+
+
+    <TextView
+        android:id="@+id/tv_final_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:text="總金額 : "
+        android:textColor="#FF0000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_return_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lv_final_catalog"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tv_notice2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="26dp"
         android:text="餐點項目："
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_notice1" />
 
+
+
     <Button
-      android:id="@+id/btn_return_home"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="26dp"
-      android:layout_marginTop="348dp"
-      android:layout_marginEnd="26dp"
-      android:text="回到主頁面"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/tv_notice2" />
+        android:id="@+id/btn_return_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="26dp"
+        android:text="回到主頁面"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_notice2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

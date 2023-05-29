@@ -20,11 +20,15 @@ public class Checkout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
 
+        Intent mIntent = getIntent();
+        int intValue = mIntent.getIntExtra("finaltotalprice", 0);
+
         btnFinishOrder = findViewById(R.id.btn_finish_order);
 
         btnFinishOrder.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), Notification.class);
+                intent.putExtra("finaltotalprice", intValue);
                 startActivityForResult(intent,0);
             }
         });
